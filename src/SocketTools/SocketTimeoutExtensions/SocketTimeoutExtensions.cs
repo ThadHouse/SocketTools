@@ -111,7 +111,6 @@ namespace SocketTools.SocketTimeoutExtensions
                                 // If poll succeeds, the socket properly connectds
                                 // Some runtimes require a connect call to be made again.
                                 // Will be caught properly on the runtimes that don't require it
-                                Console.WriteLine("Trying connect after poll");
                                 socket.Connect(endPoint);
                                 return true;
                             }
@@ -128,11 +127,6 @@ namespace SocketTools.SocketTimeoutExtensions
                     }
                     catch (SocketException ex2)
                     {
-                        if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
-                        {
-                            Console.WriteLine("Connection Refused");
-                            return true;
-                        }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
                             // Catching already connected, and just returning
