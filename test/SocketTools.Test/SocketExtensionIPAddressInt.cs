@@ -10,6 +10,7 @@ using SocketTools.SocketTimeoutExtensions;
 
 namespace SocketToolsTest
 {
+    [TestFixture]
     public class SocketExtensionIPAddressInt
     {
         [Test]
@@ -44,9 +45,15 @@ namespace SocketToolsTest
             //listener.Stop();
         }
 
-        //[Test]
+        [Test]
         public void TimeoutConnectListenHalfwayListening()
         {
+            if (RuntimeDetector.GetRuntime() == Runtime.NetCoreUnix ||
+                RuntimeDetector.GetRuntime() == Runtime.Mono)
+            {
+                Assert.Pass("Method not supported");
+                return;
+            }
 
             int port = 1790;
             SocketListener listener = null;

@@ -61,9 +61,10 @@ namespace SocketToolsTest
         [Test]
         public void TimeoutConnectListenHalfwayListening()
         {
-            if (RuntimeDetector.GetRuntime() == Runtime.NetCoreUnix)
+            if (RuntimeDetector.GetRuntime() == Runtime.NetCoreUnix || 
+                RuntimeDetector.GetRuntime() == Runtime.Mono)
             {
-                Assert.Pass("Method not supported on NetCore Unix");
+                Assert.Pass("Method not supported");
                 return;
             }
 
@@ -79,7 +80,7 @@ namespace SocketToolsTest
             t.Start();
             Socket testSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            bool connected = testSocket.ConnectTimeout("127.0.0.1", port, TimeSpan.FromSeconds(1));
+            bool connected = testSocket.ConnectTimeout("127.0.0.1", port, TimeSpan.FromSeconds(2));
 
             Assert.That(connected, Is.True);
             Assert.That(testSocket.Connected, Is.True);

@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using SocketTools;
 using SocketTools.SocketTimeoutExtensions;
 
 namespace SocketToolsTest
@@ -43,9 +44,15 @@ namespace SocketToolsTest
             //listener.Stop();
         }
 
-        //[Test]
+        [Test]
         public void TimeoutConnectListenHalfwayListening()
         {
+            if (RuntimeDetector.GetRuntime() == Runtime.NetCoreUnix ||
+                RuntimeDetector.GetRuntime() == Runtime.Mono)
+            {
+                Assert.Pass("Method not supported");
+                return;
+            }
 
             int port = 1787;
             SocketListener listener = null;
