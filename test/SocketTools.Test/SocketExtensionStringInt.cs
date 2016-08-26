@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using SocketTools;
 using SocketTools.SocketTimeoutExtensions;
 
 namespace SocketToolsTest
@@ -16,6 +17,12 @@ namespace SocketToolsTest
         [Test]
         public void TimeoutConnectAlreadyListening()
         {
+            if (RuntimeDetector.GetRuntime() == Runtime.NetCoreUnix)
+            {
+                Assert.Pass("Method not supported on NetCore Unix");
+                return;
+            }
+
             int port = 1791;
             SocketListener listener = new SocketListener(IPAddress.Any, port);
             listener.Start();
@@ -32,6 +39,12 @@ namespace SocketToolsTest
         [Test]
         public void TimeoutConnectFailure()
         {
+            if (RuntimeDetector.GetRuntime() == Runtime.NetCoreUnix)
+            {
+                Assert.Pass("Method not supported on NetCore Unix");
+                return;
+            }
+
             int port = 1792;
             //SocketListener listener = new SocketListener(IPAddress.Any, port);
             //listener.Start();
@@ -48,6 +61,11 @@ namespace SocketToolsTest
         [Test]
         public void TimeoutConnectListenHalfwayListening()
         {
+            if (RuntimeDetector.GetRuntime() == Runtime.NetCoreUnix)
+            {
+                Assert.Pass("Method not supported on NetCore Unix");
+                return;
+            }
 
             int port = 1793;
             SocketListener listener = null;

@@ -17,3 +17,5 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("2628f410-48dc-462c-af39-739d525443e3")]
+
+[assembly: InternalsVisibleTo("SocketTools.Test")]

@@ -54,10 +54,6 @@ namespace SocketTools.SocketTimeoutExtensions
                     }
                     catch (SocketException ex2)
                     {
-                        if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
-                        {
-                            return socket.Connected;
-                        }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
                             // Catching already connected, and just returning
@@ -131,10 +127,6 @@ namespace SocketTools.SocketTimeoutExtensions
                     }
                     catch (SocketException ex2)
                     {
-                        if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
-                        {
-                            return socket.Connected;
-                        }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
                             // Catching already connected, and just returning
@@ -208,10 +200,6 @@ namespace SocketTools.SocketTimeoutExtensions
                     }
                     catch (SocketException ex2)
                     {
-                        if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
-                        {
-                            return socket.Connected;
-                        }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
                             // Catching already connected, and just returning
@@ -285,10 +273,6 @@ namespace SocketTools.SocketTimeoutExtensions
                     }
                     catch (SocketException ex2)
                     {
-                        if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
-                        {
-                            return socket.Connected;
-                        }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
                             // Catching already connected, and just returning

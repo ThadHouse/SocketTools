@@ -36,7 +36,7 @@ namespace SocketToolsTest
             //listener.Start();
             Socket testSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            bool connected = testSocket.ConnectTimeout(IPAddress.Loopback, port, TimeSpan.FromSeconds(1));
+            bool connected = testSocket.ConnectTimeout(IPAddress.Parse("10.10.10.10"), port, TimeSpan.FromSeconds(1));
 
             Assert.That(connected, Is.False);
             Assert.That(testSocket.Connected, Is.False);
@@ -44,7 +44,7 @@ namespace SocketToolsTest
             //listener.Stop();
         }
 
-        [Test]
+        //[Test]
         public void TimeoutConnectListenHalfwayListening()
         {
 
