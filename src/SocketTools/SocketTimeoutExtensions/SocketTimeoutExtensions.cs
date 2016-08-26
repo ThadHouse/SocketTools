@@ -56,7 +56,7 @@ namespace SocketTools.SocketTimeoutExtensions
                     {
                         if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
                         {
-                            return false;
+                            return socket.Connected;
                         }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
@@ -133,7 +133,7 @@ namespace SocketTools.SocketTimeoutExtensions
                     {
                         if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
                         {
-                            return false;
+                            return socket.Connected;
                         }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
@@ -210,7 +210,7 @@ namespace SocketTools.SocketTimeoutExtensions
                     {
                         if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
                         {
-                            return false;
+                            return socket.Connected;
                         }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
@@ -287,7 +287,7 @@ namespace SocketTools.SocketTimeoutExtensions
                     {
                         if (ex2.SocketErrorCode == SocketError.ConnectionRefused)
                         {
-                            return false;
+                            return socket.Connected;
                         }
                         if (ex2.SocketErrorCode == SocketError.IsConnected)
                         {
