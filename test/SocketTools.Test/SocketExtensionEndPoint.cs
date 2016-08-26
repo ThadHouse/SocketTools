@@ -32,7 +32,7 @@ namespace SocketToolsTest
         [Test]
         public void TimeoutConnectFailure()
         {
-            int port = 1785;
+            int port = 1786;
             //SocketListener listener = new SocketListener(IPAddress.Any, port);
             //listener.Start();
             Socket testSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -49,7 +49,7 @@ namespace SocketToolsTest
         public void TimeoutConnectListenHalfwayListening()
         {
 
-            int port = 1785;
+            int port = 1787;
             SocketListener listener = null;
 
             Thread t = new Thread(() =>
