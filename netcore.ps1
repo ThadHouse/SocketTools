@@ -5,7 +5,6 @@ param (
   [switch]$release = $false,
   [switch]$build = $false,
   [switch]$test = $false,
-  [switch]$updatexml = $false,
   [switch]$pack = $false,
   [switch]$debug = $false
 )
@@ -175,10 +174,6 @@ if ($build) {
 
 if ($test) {
  Test
-}
-
-if ($updatexml) {
- UpdateXml
 }
 
 if ($pack) {
