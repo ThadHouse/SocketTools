@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.0-beta-*",
   "title": "Socket Tools",
   "description": "Tools to help interface with sockets in uncommon ways",
   "copyright": "Copyright 2016 ThadHouse",
