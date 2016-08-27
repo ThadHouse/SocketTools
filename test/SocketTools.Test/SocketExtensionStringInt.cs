@@ -28,7 +28,7 @@ namespace SocketToolsTest
             listener.Start();
             Socket testSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            bool connected = testSocket.ConnectTimeout("127.0.0.1", port, TimeSpan.FromSeconds(1));
+            bool connected = testSocket.ConnectWithTimeout("127.0.0.1", port, TimeSpan.FromSeconds(1));
 
             Assert.That(connected, Is.True);
             Assert.That(testSocket.Connected, Is.True);
@@ -50,7 +50,7 @@ namespace SocketToolsTest
             //listener.Start();
             Socket testSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            bool connected = testSocket.ConnectTimeout("127.0.0.1", port, TimeSpan.FromSeconds(1));
+            bool connected = testSocket.ConnectWithTimeout("127.0.0.1", port, TimeSpan.FromSeconds(1));
 
             Assert.That(connected, Is.False);
             Assert.That(testSocket.Connected, Is.False);
@@ -80,7 +80,7 @@ namespace SocketToolsTest
             t.Start();
             Socket testSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            bool connected = testSocket.ConnectTimeout("127.0.0.1", port, TimeSpan.FromSeconds(2));
+            bool connected = testSocket.ConnectWithTimeout("127.0.0.1", port, TimeSpan.FromSeconds(2));
 
             Assert.That(connected, Is.True);
             Assert.That(testSocket.Connected, Is.True);

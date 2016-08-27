@@ -6,15 +6,13 @@ namespace SocketTools.SocketTimeoutExtensions
 {
     public static class SocketTimeoutExtensions
     {
-        public static bool ConnectTimeout(this Socket socket, string host, int port, TimeSpan timeout)
+        public static bool ConnectWithTimeout(this Socket socket, string host, int port, TimeSpan timeout)
         {
             if (timeout <= TimeSpan.Zero)
             {
                 socket.Connect(host, port);
                 return true;
             }
-
-            Runtime runtime = RuntimeDetector.GetRuntime();
 
             try
             {
@@ -78,7 +76,7 @@ namespace SocketTools.SocketTimeoutExtensions
             }
         }
 
-        public static bool ConnectTimeout(this Socket socket, EndPoint endPoint, TimeSpan timeout)
+        public static bool ConnectWithTimeout(this Socket socket, EndPoint endPoint, TimeSpan timeout)
         {
             if (timeout <= TimeSpan.Zero)
             {
@@ -86,8 +84,6 @@ namespace SocketTools.SocketTimeoutExtensions
                 socket.Connect(endPoint);
                 return true;
             }
-
-            Runtime runtime = RuntimeDetector.GetRuntime();
 
             try
             {
@@ -151,7 +147,7 @@ namespace SocketTools.SocketTimeoutExtensions
             }
         }
 
-        public static bool ConnectTimeout(this Socket socket, IPAddress address, int port, TimeSpan timeout)
+        public static bool ConnectWithTimeout(this Socket socket, IPAddress address, int port, TimeSpan timeout)
         {
             if (timeout <= TimeSpan.Zero)
             {
@@ -159,8 +155,6 @@ namespace SocketTools.SocketTimeoutExtensions
                 socket.Connect(address, port);
                 return true;
             }
-
-            Runtime runtime = RuntimeDetector.GetRuntime();
 
             try
             {
@@ -224,7 +218,7 @@ namespace SocketTools.SocketTimeoutExtensions
             }
         }
 
-        public static bool ConnectTimeout(this Socket socket, IPAddress[] addresses, int port, TimeSpan timeout)
+        public static bool ConnectWithTimeout(this Socket socket, IPAddress[] addresses, int port, TimeSpan timeout)
         {
             if (timeout <= TimeSpan.Zero)
             {
@@ -232,8 +226,6 @@ namespace SocketTools.SocketTimeoutExtensions
                 socket.Connect(addresses, port);
                 return true;
             }
-
-            Runtime runtime = RuntimeDetector.GetRuntime();
 
             try
             {

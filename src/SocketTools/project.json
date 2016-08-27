@@ -1,27 +1,40 @@
 ﻿{
   "version": "1.0.0-*",
-
+  "title": "Socket Tools",
+  "description": "Tools to help interface with sockets in uncommon ways",
+  "copyright": "Copyright 2016 ThadHouse",
+  "authors": [
+    "ThadHouse"
+  ],
+  "packOptions": {
+    "owners": [
+      "ThadHouse"
+    ],
+    "authors": [
+      "ThadHouse"
+    ],
+    "id":  "SocketTools", 
+    "title": "Socket Tools",
+    "tags": [ "Socket", "Async", "NonBlocking", "Timeout" ],
+    "requireLicenseAcceptance": false,
+    "projectUrl": "https://github.com/ThadHouse/SocketTools",
+    "summary": "Tools to help interface with sockets in uncommon ways",
+    "licenseUrl": "https://github.com/ThadHouse/SocketTools/blob/master/LICENSE.txt",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/thadhouse/SocketTools"
+    }
+  },
+  
   "frameworks": {
     "net451": {},
     "netstandard1.3": {
       "dependencies": {
-        "System.Collections": "4.0.11",
-        "System.Collections.Concurrent": "4.0.12",
-        "System.Diagnostics.Debug": "4.0.11",
-        "System.Console": "4.0.0",
-        "System.Linq": "4.1.0",
         "System.Runtime": "4.1.0",
-        "System.Runtime.Extensions": "4.1.0",
-        "System.IO": "4.1.0",
-        "System.IO.FileSystem": "4.0.1",
-        "System.Threading": "4.0.11",
-        "System.Threading.Tasks": "4.0.11",
         "System.Runtime.InteropServices": "4.1.0",
         "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
         "System.Net.Primitives": "4.0.11",
         "System.Net.Sockets": "4.1.0",
-        "System.Net.NameResolution": "4.0.0",
-        "System.ComponentModel.EventBasedAsync": "4.0.11"
       }
     }
   },
